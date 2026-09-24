@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f3ede2">
+  <meta name="description" content="回っている輪のすき間を、玉がくぐり抜けるようにタップで撃ち出す。玉は輪を二度横切るので、入るときと出るときの両方ですき間が来る瞬間を読む。全 12 ステージ。">
+  <title>わくぐり — 回る輪のすき間を通す</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="わくぐり">
+  <meta property="og:title" content="わくぐり — 回る輪のすき間を通す">
+  <meta property="og:description" content="回っている輪のすき間を、玉がくぐり抜けるようにタップで撃ち出す。玉は輪を二度横切るので、入るときと出るときの両方ですき間が来る瞬間を読む。全 12 ステージ。">
+  <meta property="og:url" content="https://t-of.github.io/wakuguri/">
+  <meta property="og:image" content="https://t-of.github.io/wakuguri/icons/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- apple-mobile-web-app-status-bar-style は付けない（black-translucent だと iOS 26 で上部が隠れる） -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="わくぐり">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="./webapp-kit/webapp-kit.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <section class="title" id="title">
+    <h1 class="title__name">わくぐり</h1>
+    <p class="title__tag">回る輪のすき間を通す</p>
+    <canvas class="title__sample" id="sample" aria-hidden="true"></canvas>
+    <ol class="howto">
+      <li>画面をタップすると、下の玉がまっすぐ上へ飛ぶ</li>
+      <li>輪の線に当たったら失敗。玉は輪を入るときと出るときの 2 回横切る</li>
+      <li>いちばん上まで届けばクリア。何度でもすぐやり直せる</li>
+    </ol>
+    <div class="stages" id="stages" role="group" aria-label="ステージ"></div>
+    <button class="big" id="continue">つづきから</button>
+    <div class="title__sub">
+      <button class="pill" data-wak="install" hidden>アプリにする</button>
+      <button class="pill" data-wak="share">共有</button>
+      <button class="pill" id="sound" aria-pressed="true">音 オン</button>
+    </div>
+    <p class="credit"><a href="/">T.OF...</a> のアプリ</p>
+  </section>
+
+  <section class="play" id="play" hidden>
+    <header class="hud">
+      <button class="pill" id="back">もどる</button>
+      <p class="hud__stage">ステージ <b id="stageNo">1</b></p>
+      <p class="hud__tries">挑戦 <b id="tries">0</b> 回目</p>
+    </header>
+    <div class="field" id="fieldWrap">
+      <canvas id="field"></canvas>
+    </div>
+
+    <div class="clear" id="clear" hidden>
+      <div class="clear__card">
+        <h2 class="clear__title" id="cTitle">くぐった</h2>
+        <p class="clear__score"><span>ステージ <b id="cStage">1</b></span><span><b id="cTries">1</b> 回目</span></p>
+        <p class="clear__new" id="cNew" hidden>記録更新</p>
+        <p class="clear__best" id="cBest"></p>
+        <button class="big" id="next">次へ</button>
+        <div class="clear__row">
+          <button class="pill" id="again">もう一度</button>
+          <button class="pill" id="shareClear">共有</button>
+          <button class="pill" id="toList">ステージ一覧</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="./webapp-kit/webapp-kit.js"></script>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "id": "./",
+  "name": "わくぐり",
+  "short_name": "わくぐり",
+  "description": "回っている輪のすき間を、玉がくぐり抜けるようにタップで撃ち出す。玉は輪を二度横切るので、入るときと出るときの両方ですき間が来る瞬間を読む。全 12 ステージ。",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f3ede2",
+  "theme_color": "#f3ede2",
+  "lang": "ja",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
