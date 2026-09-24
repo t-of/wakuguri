@@ -1,1 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#f3ede2"/><text x="256" y="256" dy=".35em" text-anchor="middle" font-family="system-ui,sans-serif" font-weight="700" font-size="280" fill="#eceef3">わ</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<defs>
+  <linearGradient id="ringGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#b17f45"/>
+    <stop offset="1" stop-color="#8a5c2c"/>
+  </linearGradient>
+  <radialGradient id="ballGrad" cx="38%" cy="32%" r="75%">
+    <stop offset="0" stop-color="#e86a52"/>
+    <stop offset="0.55" stop-color="#c43f2a"/>
+    <stop offset="1" stop-color="#9c2e1c"/>
+  </radialGradient>
+</defs>
+<rect width="512" height="512" rx="112" fill="#f3ede2"/>
+<line x1="256" y1="140" x2="256" y2="452" stroke="#7d7468" stroke-width="7" stroke-linecap="round" stroke-dasharray="1 17" opacity="0.55"/>
+<path d="M 180.29 364.13 A 132 132 0 1 1 331.71 364.13" fill="none" stroke="url(#ringGrad)" stroke-width="56" stroke-linecap="round"/>
+<circle cx="256" cy="388" r="46" fill="url(#ballGrad)"/>
+<circle cx="240" cy="374" r="13" fill="#ffb49f" opacity="0.75"/>
+</svg>
